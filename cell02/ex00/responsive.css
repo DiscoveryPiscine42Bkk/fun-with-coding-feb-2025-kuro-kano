@@ -1,0 +1,28 @@
+
+body {
+    font-family: sans-serif;
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+h1 {
+    padding: 10px;
+}
+
+.box {
+    height: 200px;
+    width: 50%;
+    border: 2px solid black;
+}
+
+.one {
+    background-color: rgb(146, 146, 211);
+}
+
+.two {
+    background-color: rgb(214, 190, 158);
+}
