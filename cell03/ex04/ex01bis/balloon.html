@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01-balloon</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #252525;
+            font-family: sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .balloon {
+            width: 200px;
+            height: 200px;
+            background-color: #b43d3d;
+            border-radius: 50%;
+            box-shadow: 0 4px 100px #b43d3d;
+            cursor: pointer;
+        }
+
+        .info {
+            color: aliceblue;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="balloon" id="balloon"></div>
+        <h1 class="info" id="info">200 px</h1>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            let size = 200;
+            let index = 0;
+            const colors = ['#b43d3d', '#3db447', '#3d67b4'];
+
+            function update() {
+                $("#info").text(`${size} px`);
+                $("#balloon").css({
+                    width: `${size}px`,
+                    height: `${size}px`,
+                    backgroundColor: colors[index],
+                    boxShadow: `0 4px 100px ${colors[index]}`
+                });
+            }
+
+            $("#balloon").click(function () {
+                size += 10;
+                if (size > 420) {
+                    size = 200;
+                    index = 0;
+                } else {
+                    index = (index + 1) % colors.length;
+                }
+                update();
+            });
+
+            $("#balloon").mouseleave(function () {
+                size = Math.max(size - 5, 200);
+                index = (index - 1 + colors.length) % colors.length;
+                update();
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
