@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02-Calculator</title>
+    <style>
+
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #a4dee9;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container input, .container select {
+            margin: 5px;
+            padding: 10px;
+            width: 100px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .container input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+
+        .container input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <input type="text" id="left">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="right">
+        <input type="submit" value="Try me!" onclick="calculate()">
+    </div>
+
+    <script>
+
+        function calculate() {
+            const operator = document.getElementById('operator').value;
+            const number1 = parseInt(document.getElementById('left').value);
+            const number2 = parseInt(document.getElementById('right').value);
+
+            if ((isNaN(number1) || isNaN(number2))) {
+                alert('Error :(');
+                console.log('Error: you mai sai input peen number a');
+                return;
+            }
+
+            if (!((number1 >= 0) && (number2 >= 0))) {
+                alert('Error :(');
+                console.log('Error: why you sai lek tee mai chai 0 or positive number wa');
+                return;
+            }
+
+            if ((operator === '/' || operator === '%') && number2 === 0) {
+                alert("It's over 9000!");
+                console.log("Error: haar(/) or percent(%) with zero")
+                return;
+            }
+
+            let result;
+            if (operator === '+')
+                result = number1 + number2;
+            else if (operator === '-')
+                result = number1 - number2;
+            else if (operator === '*')
+                result = number1 * number2;
+            else if (operator === '/')
+                result = number1 / number2;
+            else if (operator === '%')
+                result = number1 % number2;
+            else
+                result = 'Invalid operator';
+
+            alert(`Result: ${result}`);
+            console.log(`Result: ${result}`);
+        }
+
+        setInterval(() => {
+            alert("Please, use me...")
+        }, 30000)
+
+    </script>
+
+</body>
+
+</html>
