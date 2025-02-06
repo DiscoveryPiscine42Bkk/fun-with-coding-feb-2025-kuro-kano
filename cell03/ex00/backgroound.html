@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ex00</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="backgroound.css">
 
 </head>
 
@@ -17,11 +18,12 @@
 
         const button = document.getElementById('randomcolor');
 
+        function colorRandom() {
+            return Math.floor(Math.random() * 256);
+        }
+
         button.addEventListener('click', () => {
-            const r = Math.floor(Math.random() * 256);
-            const g = Math.floor(Math.random() * 256);
-            const b = Math.floor(Math.random() * 256);
-            const BackgroundColor = `rgb(${r}, ${g}, ${b})`;
+            const backgroundColor = `rgb(${colorRandom()}, ${colorRandom()}, ${colorRandom()})`;
             document.body.style.backgroundColor = BackgroundColor;
         });
 
