@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Portfolio</a>
+            <button class="nav-toggle" onclick="toggleNav()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="mypage.html">NASONGSA</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#showcase">Showcase</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#accompletement">Accompletement</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+
+        function toggleNav() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+    </script>
+
+    <section id="about">
+        <img src="./pic/Profile.png" alt="Profile" class="profile-img">
+        <div class="text-container">
+            <h1>Thanya Woramongkol</h1>
+            <p class="intra-name">tworamon</p>
+            <p>King Mongkut's Institute of Technology Ladkrabang</p>
+            <p>Information Technology (IT)</p>
+            <p style="max-width: 600px; margin: 2rem auto;">
+                I am a student in the Faculty of Information Technology, majoring in Information Technology with a focus
+                on Computer Infrastructure. I have a basic knowledge of computers and information technology, as well as
+                knowledge in mathematics, calculus, physics, biology, business, and multimedia, including basic sound
+                engineering and graphic design.
+            </p>
+        </div>
+    </section>
+
+    <section id="showcase">
+        <div class="container">
+            <h2 style="text-align: center;">Showcase</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Project</h3>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://github.com/kuro-kano/Rougelite_Basic" target="_blank" class="github-project">Project Rougelite Basic</a>
+                        <p style="color: #666;">for Problem Solving and Computer Programming Created Rougelite game by python and pygame</p>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://github.com/kuro-kano/BoardZone" target="_blank" class="github-project">Project BoardZone</a>
+                        <p style="color: #666;">for Object Oriented Programming Created by Java to Manage Broard game in IT</p>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://github.com/Cherrine/GinKaoYang" target="_blank" class="github-project">Project GinKaoYang</a>
+                        <p style="color: #666;">for Information System Analysis and Design Created Website application to place order on canteen</p>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://github.com/66070010Ninja/Physical-Computing-Project-2024---IT-KMITL" target="_blank" class="github-project">Project Joycon</a>
+                        <p style="color: #666;">for Physical Computing Created by C and arduino to make Joy controller</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Skills</h3>
+                    <div style="margin-top: 1rem;">
+                        <h4>Frontend</h4>
+                        <p>HTML5, CSS, JavaScript</p>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <h4>Backend</h4>
+                        <p>Node.js, Python, Java, C, shell, mySQL, Unity, Godot</p>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <h4>Tools & Others</h4>
+                        <p>Git, Figma, Notion, cisco Router, cisco Switch, Rack Server, DHCP Server, Web Server, Route
+                            protocol, Linux</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="accomplishment">
+        <h2 style="text-align: center; margin-bottom: 3rem;">Accomplishment</h2>
+        <h3 class="head-accom">Artwork: </h3>
+        <div class="accomplishment-grid" id="artwork-container">
+
+            <script>
+
+                img_name = [
+                    'ayame hololive: for practice',
+                    'chibi mio hololive: for practice',
+                    'tanabata art: school contest',
+                    'Iryne Mau ch. Autumnia: fanart',
+                    'Iryne Mau ch. Autumnia and Anya Smith ch..',
+                    'Anya Smith ch. : fanart birthday',
+                    'Anya Smith ch. : fanart for practice anatomy',
+                    'Avisa Lopez cd Autumnia: fanart for practice liner',
+                    'Iryne Mau ch. Autumnia: used for Prepro67',
+                    'Iryne Mau ch. Autumnia: used for Prepro67',
+                    'Iryne Mau ch. Autumnia: used for Prepro67',
+                    'Goozila Ily ch. Autumnia: fanart anniversary'
+                ];
+
+                let container = document.getElementById('artwork-container');
+                container.innerHTML = '';
+
+                for (let i = 0; i < 12; i++) {
+                    container.innerHTML += `<div class="accomplishment-item">
+                <img src="./pic/accom/accom${i + 1}.png" class="accomplishment-image">
+                <p class="accomplishment-name">${img_name[i]}</p></div>`
+                }
+
+            </script>
+        </div>
+        <a href="https://drive.google.com/drive/folders/1LPCJ7Hmp1Zdyfdj774o0gixr6UY4gql9?usp=sharing" target="_blank" class="drive-link">
+    view full picture HERE!!</a>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="social-links">
+                <a href="https://github.com/kuro-kano" target="_blank">GitHub</a>
+                <a href="https://www.instagram.com/kuro_kano1412/" target="_blank">Instagram</a>
+                <a href="https://www.facebook.com/DarKraised/" target="_blank">Facebook</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 tworamon. All right reserved.</p>
+    </footer>
+</body>
+
+</html>

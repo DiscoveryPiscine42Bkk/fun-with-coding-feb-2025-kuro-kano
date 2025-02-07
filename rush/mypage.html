@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio One-Page Site</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    /* รีเซ็ต margin และ padding สำหรับทุก element */
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding-top: 60px; /* ป้องกัน navbar บังเนื้อหา */
+}
+
+/* 📌 Navigation Bar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 0 20px;
+}
+
+/* 📌 Desktop Menu */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+/* 📌 Checkbox สำหรับ Toggle Menu */
+#menu-toggle {
+  display: none;
+}
+
+/* 📌 Hamburger Menu */
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+}
+
+/* 📱 Responsive Design: Mobile (≤ 768px) */
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  /* 📌 แสดงเมนูเมื่อ checkbox ถูกเลือก */
+  #menu-toggle:checked ~ ul {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+}
+
+    
+#home {
+background-image: url(https://i.pinimg.com/originals/41/72/2c/41722ca1e5ce25b6c91642af8e4027b3.gif);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+    background-repeat: no-repeat; 
+  height: 50vh; /* ทำให้ section สูงเต็มจอ */
+}
+    #about { background-image: url(https://i.gifer.com/WBVk.gif); 
+        
+   
+     }
+    #showcase {background-image: url(https://i.gifer.com/WBVk.gif); }
+    #contact { background-image: url(https://i.gifer.com/WBVk.gif); 
+    min-height: 50vh;}
+    
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <label for="menu-toggle" class="menu-icon">☰</label>
+  <input type="checkbox" id="menu-toggle">
+    <ul>
+      <li><a href="index.html">tworamon</a></li>
+      <li><a href="#home">home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#showcase">Showcase</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ส่วนเนื้อหาตัวอย่างของแต่ละ Section -->
+  <section id="home">
+    <center>
+    <h1 id="title">WELCOME TO MY PORTFOLIO</h1>
+    </center>
+    <style>
+        #title {
+  font-size: 70px;
+  font-family: "Press Start 2P", serif;
+  color: rgb(255, 0, 106);
+  margin-top: 150px;
+  text-align: center;
+}
+
+/* 📱 สำหรับมือถือ (≤ 768px) */
+@media screen and (max-width: 768px) {
+  #title {
+    font-size: 40px; /* ลดขนาดลงให้เหมาะกับจอเล็ก */
+    margin-top: 80px; /* ลด margin-top เพื่อให้ข้อความอยู่กึ่งกลางมากขึ้น */
+  }
+}
+
+/* 📟 สำหรับแท็บเล็ต (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  #title {
+    font-size: 55px; /* ขนาดใหญ่ขึ้นกว่ามือถือ แต่เล็กกว่าเดสก์ท็อป */
+    margin-top: 120px;
+  }
+}
+
+    </style>
+  </section>
+  
+  <section id="about">
+    <div class="about-container">
+        <div class="profile-pic"></div>
+        <h2 id="aboutme">ABOUT ME</h2>
+        <div class="about-text">
+          <p>I AM NATANON SONGSAKAOFA <br><br>intra nasongsa <br><br>I'm currently studying at KMITL (King Mongkut's Institute of Technology Ladkrabang).
+
+            <br><br>I am studying Information Technology or IT 
+            
+            <br><br>In my free time, I enjoy playing games.
+            
+            
+        </div>
+      </div>
+    </section>
+    
+    <style>
+      /* สไตล์สำหรับส่วน About */
+      #aboutme {
+  color: white;
+  font-size: 40px;
+  background-color: #838383;
+  width: 250px;
+  padding: 7px 0;
+  border-radius: 15px;
+  text-align: center;
+}
+
+#about {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-pic {
+  margin-top: 40px;
+  width: 400px;
+  height: 400px;
+  background-image: url(MP.png);
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  border: 10px solid rgb(148, 148, 148);
+}
+
+.about-text {
+  width: 60%;
+  background-color: #d3d3d3;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* --------------------------- */
+/* Media Queries for Responsive */
+/* --------------------------- */
+
+/* สำหรับมือถือ (≤ 768px) */
+@media screen and (max-width: 768px) {
+  #aboutme {
+    font-size: 30px;
+    width: 200px;
+  }
+
+  .profile-pic {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-text {
+    width: 90%;
+    font-size: 16px;
+    padding: 15px;
+  }
+}
+
+/* สำหรับแท็บเล็ต (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  #aboutme {
+    font-size: 35px;
+    width: 220px;
+  }
+
+  .profile-pic {
+    width: 250px;
+    height: 250px;
+  }
+
+  .about-text {
+    width: 75%;
+    font-size: 18px;
+    padding: 18px;
+  }
+}
+
+      
+    </style>
+  </section>
+  
+  <section id="showcase">
+    <div id="bgshowcolor">
+    <h2 class="showcase-title">SHOWCASE</h2><br>
+    <h2 id="fontpj">myproject</h2>
+  <div class="showcase-container">
+    <div ><img src="OCW.png">
+    <br>
+    <p id="p1m">ocean war 2077</p>
+    <br>
+    <a href="https://github.com/66070010Ninja/Java-Game">
+    <p id="p1m">to github<p></a></div>
+    <div><img src="soa.png">
+        <br>
+        <p id="p1m">space of arcana</p>
+        <br>
+        <a href="https://github.com/66070010Ninja/Soul-Spacecraft">
+        <p id="p1m">to github<p></a></div>
+      
+  </div>
+
+  <h3 class="skill-title">Skill</h3>
+  <div class="skill-container">
+    <div class="skill-item"><img id="simg" src="https://images-storage.thaiware.site/software/2022_10/thumbnails/5460_2210251127301f.png"></div>
+    <div class="skill-item"><img id="simg" src="https://mblogthumb-phinf.pstatic.net/MjAyNDA0MTlfMjMy/MDAxNzEzNDkyMzE3NDI4.SMN9SlM9LP5HVZtKz9kLALPHPHkBAd7iLdDqjAL-RPQg.4vVlEX40IZ3jqEPYYjKzJDzPxaz0aEsTAwEWhHoJ0tog.PNG/html_%EB%A1%9C%EA%B3%A0.png?type=w800"></div>
+  </div>
+    </div>
+</section>
+
+<style>
+  /* จัดศูนย์กลางทั้งส่วน */
+  #p1m {
+  font-weight: bolder;
+  border: 6px solid rgb(145, 145, 145);
+  background-color: #d3d3d3;
+  padding: 10px 20px;
+  font-size: 20px;
+  display: inline-block;
+}
+
+#simg {
+  width: 200px;
+  height: 100px;
+}
+
+#showcase {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+#bgshowcolor {
+  padding-top: 30px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(131, 131, 131, 0.6);
+  border-radius: 10px;
+}
+
+#fontpj {
+  margin-top: 15px;
+  border: 6px solid rgb(145, 145, 145);
+  background-color: #d3d3d3;
+  padding: 10px 20px;
+  font-size: 36px;
+  display: inline-block;
+}
+
+/* สไตล์หัวข้อ */
+.showcase-title {
+  display: inline-block;
+  border: 6px solid rgb(145, 145, 145);
+  background-color: #d3d3d3;
+  padding: 10px 20px;
+  font-size: 48px;
+}
+
+/* คอนเทนเนอร์สำหรับรูป Showcase */
+.showcase-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap; /* ทำให้ responsive */
+}
+
+.showcase-item {
+  width: 200px;
+  height: 200px;
+  background-color: #d3d3d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* คอนเทนเนอร์สำหรับ Skill */
+.skill-title {
+  margin-top: 15px;
+  border: 6px solid rgb(145, 145, 145);
+  background-color: #d3d3d3;
+  padding: 10px 20px;
+  font-size: 36px;
+  display: inline-block;
+}
+
+.skill-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+  flex-wrap: wrap; /* ทำให้ responsive */
+}
+
+.skill-item {
+  width: 100px;
+  height: 100px;
+  background-color: #d3d3d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* --------------------------- */
+/* Media Queries for Responsive */
+/* --------------------------- */
+
+/* จอเล็กกว่า 768px (มือถือ) */
+@media screen and (max-width: 768px) {
+  .showcase-title {
+    font-size: 36px; /* ลดขนาดฟอนต์ของหัวข้อ */
+  }
+
+  #bgshowcolor {
+    width: 90%; /* ให้กล่องกว้างขึ้นเพื่อพอดีกับจอมือถือ */
+    padding: 30px 20px;
+  }
+
+  .showcase-container,
+  .skill-container {
+    flex-direction: column; /* เรียงเป็นคอลัมน์ในมือถือ */
+    align-items: center;
+  }
+
+  .showcase-item {
+    width: 150px;
+    height: 150px; /* ลดขนาดเพื่อให้พอดีกับมือถือ */
+  }
+
+  .skill-item {
+    width: 80px;
+    height: 80px;
+  }
+
+  #p1m, #fontpj, .skill-title {
+    font-size: 18px; /* ลดขนาดฟอนต์ */
+    padding: 8px 15px;
+  }
+}
+
+/* จอใหญ่กว่า 768px แต่เล็กกว่า 1024px (แท็บเล็ต) */
+@media screen and (max-width: 1024px) {
+  #bgshowcolor {
+    width: 80%;
+  }
+
+  .showcase-title {
+    font-size: 42px;
+  }
+
+  .showcase-item {
+    width: 180px;
+    height: 180px;
+  }
+
+  .skill-item {
+    width: 90px;
+    height: 90px;
+  }
+
+  #p1m, #fontpj, .skill-title {
+    font-size: 22px;
+  }
+}
+
+</style>
+  </section>
+  
+  <section id="contact">
+    <div id="bgconcolor">
+    <h2 class="contact-title">CONTACT</h2>
+  <div class="contact-container">
+    <div><a href="https://www.facebook.com/nth.nnth.sxng.skaw.fa/">
+        <img id="conimg" src="https://store-images.s-microsoft.com/image/apps.30645.9007199266245907.cb06f1f9-9154-408e-b4ef-d19f2325893b.ac3b465e-4384-42a8-9142-901c0405e1bc">
+    </a>
+    <br>
+    <p id="p2m">ณฐนนท์ ส่องสกาวฟ้า</p></div>
+    <div>
+        <img id="conimg" src="https://xneelo.co.za/help-centre/wp-content/uploads/2016/12/gmail-logo-1.png"></a>
+    </a>
+    <br>
+    <p id="p2m">poohkiriki@gmail.com</p>
+</div>
+        <div><a href="https://github.com/WANDERERTRADER">
+        <img id="conimg" src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-1-logo-black-and-white.png"></a>
+    </a>
+    <br>
+    <p id="p2m">WANDERERTRADER</p>
+    </div>
+    <br>
+    <footer>
+        <p id="fo">&copy; 2025 nasongsa. All rights reserved.</p>
+    </footer>
+</div>
+</section>
+
+<style>
+  /* ตั้งค่ากลางทั้งหมด */
+  #conimg {
+  width: 100px;
+  height: 100px;
+}
+ #fo{
+    color: white;
+
+ }
+
+#contact {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* สไตล์หัวข้อ */
+.contact-title {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: bolder;
+  border: 6px solid rgb(145, 145, 145);
+  background-color: #d3d3d3;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+#bgconcolor {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(131, 131, 131, 0.6);
+  border-radius: 10px;
+}
+
+/* คอนเทนเนอร์ของรูป */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap; /* ทำให้ไอเท็มเรียงเป็นแถวใหม่เมื่อพื้นที่แคบลง */
+}
+
+.contact-item {
+  width: 150px;
+  height: 150px;
+  background-color: #d3d3d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+#p2m {
+  font-weight: bolder;
+  border: 6px solid rgb(145, 145, 145);
+  background-color: #d3d3d3;
+  padding: 10px 20px;
+  font-size: 20px;
+  display: inline-block;
+}
+
+/* --------------------------- */
+/* Media Queries for Responsive */
+/* --------------------------- */
+
+/* จอเล็กกว่า 768px (มือถือ) */
+@media screen and (max-width: 768px) {
+  .contact-title {
+    font-size: 36px; /* ลดขนาดฟอนต์ของหัวข้อ */
+  }
+
+  #bgconcolor {
+    width: 90%; /* ให้กล่องกว้างขึ้นเพื่อพอดีกับจอมือถือ */
+    padding: 30px 20px;
+  }
+
+  .contact-container {
+    flex-direction: column; /* เรียงเป็นคอลัมน์ในมือถือ */
+    align-items: center;
+  }
+
+  #conimg {
+    width: 80px; /* ลดขนาดไอคอน */
+    height: 80px;
+  }
+
+  #p2m {
+    font-size: 16px; /* ลดขนาดฟอนต์ */
+    padding: 8px 15px;
+  }
+}
+
+/* จอใหญ่กว่า 768px แต่เล็กกว่า 1024px (แท็บเล็ต) */
+@media screen and (max-width: 1024px) {
+  #bgconcolor {
+    width: 80%; /* ปรับขนาดให้เหมาะกับแท็บเล็ต */
+  }
+
+  .contact-title {
+    font-size: 42px;
+  }
+
+  #p2m {
+    font-size: 18px;
+  }
+}
+
+</style>
+  </section>
+</body>
+</html>
